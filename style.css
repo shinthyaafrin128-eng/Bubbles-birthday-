@@ -1,0 +1,79 @@
+* { box-sizing: border-box; }
+:root {
+  --bg: #10091f; --pink: #ff75b5; --purple: #b59aff; --text: #fff8ff;
+  --muted: #c7badb; --glass: rgba(255,255,255,.075);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100vh; overflow-x: hidden; color: var(--text);
+  background: radial-gradient(ellipse at 50% 10%, #332052 0%, #1a1030 38%, var(--bg) 78%);
+  font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+}
+.stars { position: fixed; inset: 0; pointer-events: none; opacity: .55;
+  background-image: radial-gradient(2px 2px at 20px 30px,#fff,transparent), radial-gradient(1px 1px at 80px 120px,#ffc8e8,transparent), radial-gradient(2px 2px at 180px 60px,#c7b6ff,transparent), radial-gradient(1px 1px at 240px 180px,#fff,transparent);
+  background-size: 290px 230px; animation: twinkle 5s ease-in-out infinite alternate; }
+.glow { position: fixed; width: 300px; height: 300px; border-radius: 50%; filter: blur(90px); opacity: .2; pointer-events:none; }
+.glow-one { background: #fa58a5; top: 8%; left: -140px; }
+.glow-two { background: #7d5bff; right: -150px; bottom: 8%; }
+.page { position: relative; z-index: 1; width: min(100% - 32px, 760px); margin: 0 auto; padding: 28px 0 22px; text-align: center; }
+.top-pill { display: inline-flex; align-items:center; gap: 9px; padding: 9px 15px; border: 1px solid #ffffff20; border-radius: 99px; background: #ffffff09; color:#e8d9ff; font-size: .66rem; letter-spacing: 2px; }
+.live-dot { width:7px; height:7px; border-radius:50%; background:#ff78b8; box-shadow:0 0 12px #ff78b8; }
+.hero { padding-top: 36px; }
+.eyebrow { color:#ff9acb; letter-spacing: 3px; font-size:.68rem; font-weight:600; }
+h1 { margin: 10px 0 7px; font-size: clamp(2.25rem, 7vw, 4.6rem); line-height:1.08; letter-spacing:-2px; font-weight:800; }
+.gradient-text { background:linear-gradient(100deg,#ff7db8,#c4a4ff); color:transparent; background-clip:text; }
+.subtitle { color:#d8cce8; font-family:'Hind Siliguri',sans-serif; font-size:1.05rem; margin:12px 0 0; }
+.cake-scene { height: 250px; max-width:390px; margin: 0 auto; position:relative; display:grid; place-items:center; }
+.orbit { position:absolute; width:220px; height:220px; border:1px solid #ffc5e51e; border-radius:50%; }
+.orbit-a { transform:scaleX(1.3) rotate(-22deg); }
+.orbit-b { transform:scaleX(.8) rotate(42deg); border-color:#cbb4ff24; }
+.cake { position:relative; width:170px; height:145px; margin-top:38px; filter:drop-shadow(0 16px 24px #ff5caa25); animation: float 4s ease-in-out infinite; }
+.plate { position:absolute; bottom:0; left:-18px; width:206px; height:16px; border-radius:50%; background:linear-gradient(#fff1ff,#d7b7ef); box-shadow:0 7px 0 #a17bc7, 0 12px 22px #0005; }
+.cake-bottom { position:absolute; bottom:13px; width:170px; height:43px; background:linear-gradient(90deg,#b84d9c,#f38abf 45%,#b85caa); border-radius:8px 8px 14px 14px; }
+.cake-body { position:absolute; bottom:48px; width:170px; height:47px; border-radius:8px 8px 5px 5px; background:linear-gradient(90deg,#ffd5eb,#fff0f7 50%,#f8c4e4); color:#d56ca8; display:flex; justify-content:space-evenly; align-items:center; font-size:20px; }
+.icing { position:absolute; z-index:2; bottom:88px; left:-3px; width:176px; height:23px; background:#fff0f8; border-radius:50% 50% 8px 8px; }
+.icing:after { content:""; position:absolute; left:10px; right:10px; bottom:-9px; height:16px; background:radial-gradient(ellipse at top,#fff0f8 0 60%,transparent 64%); background-size:25px 17px; }
+.cake-top { position:absolute; z-index:3; bottom:100px; left:0; width:170px; height:23px; border-radius:50%; background:#ffe7f5; border:2px solid #fff7fd; }
+.candle { position:absolute; z-index:4; bottom:119px; left:78px; height:34px; width:13px; border-radius:4px 4px 2px 2px; background:repeating-linear-gradient(135deg,#fff 0 5px,#ff80bb 5px 10px); }
+.flame { position:absolute; width:14px; height:21px; left:-1px; top:-20px; background:linear-gradient(#fff6a7,#ff9c45 75%,#ff5b88); border-radius:80% 15% 70% 40%; transform:rotate(2deg); box-shadow:0 0 20px #ffb34c; animation: flicker .7s infinite alternate; }
+.floaty { position:absolute; animation: bob 3s ease-in-out infinite; }
+.heart { color:#ff83bf; font-size:24px; text-shadow:0 0 16px #ff5eaa; }
+.h1 { top:55px; left:18%; transform:rotate(-15deg); }.h2 { right:17%; bottom:48px; font-size:18px; animation-delay:1s; }
+.sparkle { color:#ffe0f2; font-size:24px; text-shadow:0 0 15px #e3b6ff; }
+.s1 { left:22%; top:88px; }.s2 { right:20%; top:48px; animation-delay:.8s; }.s3 { right:25%; bottom:24px; animation-delay:1.4s; }
+.name-card { display:inline-flex; flex-direction:column; align-items:center; padding:17px 32px 14px; min-width:min(300px,90%); border:1px solid #ffffff1c; border-radius:18px; background:linear-gradient(135deg,#ffffff12,#ffffff05); box-shadow:0 14px 50px #0002; backdrop-filter:blur(12px); }
+.tiny-label { font-size:.58rem; letter-spacing:3px; color:#bdaed2; }
+.name { margin-top:4px; font-size:clamp(1.5rem,5vw,2.2rem); font-weight:700; background:linear-gradient(90deg,#ff91c9,#d1baff); color:transparent; background-clip:text; overflow-wrap:anywhere; }
+.name-underline { height:2px; width:60px; margin-top:5px; border-radius:10px; background:linear-gradient(90deg,#ff82bb,#c5a9ff); }
+.wish { max-width:530px; margin:22px auto 24px; color:#d9cde7; font:1rem/1.9 'Hind Siliguri',sans-serif; }
+.magic-button,.secondary-button { border:0; cursor:pointer; font:600 .92rem 'Poppins',sans-serif; transition:transform .2s, box-shadow .2s; }
+.magic-button { display:inline-flex; align-items:center; gap:18px; padding:15px 23px; color:#35102e; border-radius:14px; background:linear-gradient(110deg,#ff91c8,#d2b7ff); box-shadow:0 8px 28px #e86ab83a; }
+.magic-button:hover,.secondary-button:hover { transform:translateY(-3px); box-shadow:0 12px 32px #e86ab84a; }
+.button-sparkle { font-size:1.3rem; }
+.hint { color:#9686ad; font-size:.72rem; margin-top:13px; }
+.surprise-panel { display:none; max-width:560px; margin:34px auto 20px; padding:28px clamp(18px,5vw,36px); border-radius:24px; border:1px solid #ffffff20; background:linear-gradient(145deg,#ffffff12,#ffffff06); box-shadow:0 20px 70px #0003; animation: reveal .65s ease both; }
+.surprise-panel.show { display:block; }
+.panel-icon { font-size:2.7rem; animation: bob 2s ease-in-out infinite; }
+.surprise-panel h2 { margin:10px 0; font-size:clamp(1.35rem,4vw,2rem); }
+.surprise-panel p:not(.eyebrow) { color:#d7c9e5; font:1rem/1.9 'Hind Siliguri',sans-serif; }
+.wish-tags { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:20px 0; }
+.wish-tags span { border:1px solid #ffffff1c; background:#ffffff0a; border-radius:99px; padding:7px 13px; color:#f5d8ed; font-size:.75rem; }
+.secondary-button { color:#fff; background:#ffffff12; border:1px solid #ffffff2a; border-radius:12px; padding:12px 17px; }
+footer { padding:35px 0 4px; color:#887a9e; letter-spacing:3px; font-size:.58rem; }
+footer span { color:#ff83bc; }
+#confettiCanvas { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:10; }
+.toast { position:fixed; left:50%; bottom:20px; transform:translate(-50%,20px); opacity:0; background:#fff0fa; color:#41143a; padding:11px 17px; border-radius:99px; font-size:.82rem; transition:.3s; z-index:20; max-width:90%; text-align:center; }
+.toast.show { opacity:1; transform:translate(-50%,0); }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+@keyframes bob { 0%,100%{translate:0 0} 50%{translate:0 -9px} }
+@keyframes flicker { from{transform:rotate(-5deg) scale(.94)} to{transform:rotate(5deg) scale(1.06)} }
+@keyframes twinkle { from{opacity:.3} to{opacity:.75} }
+@keyframes reveal { from{opacity:0; transform:translateY(18px) scale(.98)} to{opacity:1; transform:translateY(0) scale(1)} }
+@media(max-width:480px) {
+  .page { width:min(100% - 24px,760px); padding-top:18px; }
+  .hero { padding-top:28px; } .cake-scene { height:225px; transform:scale(.92); margin:-2px auto; }
+  .wish { font-size:.95rem; margin-top:18px; }
+  .magic-button { padding:14px 19px; }
+  .surprise-panel { padding-top:24px; padding-bottom:24px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; } }
