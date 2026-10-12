@@ -1,5 +1,5 @@
 // Customize the birthday person's name here:
-const birthdayPerson = "Someone Special";
+const birthdayPerson = "Bubbles 👻";
 
 const recipientName = document.getElementById("recipientName");
 const surpriseBtn = document.getElementById("surpriseBtn");
